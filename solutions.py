@@ -11,6 +11,13 @@ def calculate_profit():
     You can assume the user will enter only numeric characters, e.g. "3000", not "$3,000.00"
     The output should match the format of the following examples: "Profit: $690.00" for sales of $3,000, or "Profit: $2,300.00" for sales of $10,000, etc.
     """
+    total_sales = input("What is your total sales? ")
+    total_sales = int(total_sales)
+    profit = 0.23 * total_sales
+    print(f"Profit: ${profit:,.2f}")
+# calculate_profit()
+    
+
 
 
 def calculate_quotient_and_remainder():
@@ -22,6 +29,13 @@ def calculate_quotient_and_remainder():
       Enter number #2: 2
       2 goes into 5 a total of 2 times with a remainder of 1
     """
+    first_number = input("What is your first integer? ") 
+    first_number = int(first_number) 
+    second_number = int(input("What is your second integer? "))
+    quotient = first_number // second_number
+    remainder = first_number % second_number
+    print(f"{second_number} goes into {first_number} a total of {quotient} times with a remainder of {remainder}")
+# calculate_quotient_and_remainder()
 
 
 def calculate_miles_per_gallon():
@@ -33,8 +47,14 @@ def calculate_miles_per_gallon():
 
       Miles driven: 100
       Gas used (gallons): 25
-      Miles per gallon: 2.2
+      Miles per gallon: 4.0
     """
+    miles_driven = int(input("What is your miles driven? "))
+    gas_used = int(input("How much gas did you use? "))
+    mpg = miles_driven / gas_used
+    print(f"Miles driven: {miles_driven}\nGas used(gallons): {gas_used}\nMiles per gallon: {mpg:.1f}")
+# calculate_miles_per_gallon()
+
 
 
 def align_text():
@@ -53,3 +73,21 @@ def align_text():
       Price #2: $   10.00
       Price #3: $ 9532.60
     """
+    # first_number = round(float(input("Enter price #1: ")),2)
+    # second_number = round(float(input("Enter price #2: ")),2)
+    # third_number = round(float(input("Enter price #3: ")),2)
+    # print("\nHere are your prices!\n")
+    # print("Price #1: $", format(first_number, ">8.2f"))
+    # print("Price #2: $", format(second_number, ">8.2f"))
+    # print("Price #3: $", format(third_number, ">8.2f"))
+    first_number = float(input("Enter price #1: "))
+    second_number = float(input("Enter price #2: "))
+    third_number = float(input("Enter price #3: "))
+    print("\nHere are your prices!\n")
+    max_width = max(len(str(first_number)), len(str(second_number)), len(str(third_number))) + 2
+    print(f"Price #1: ${first_number:>{max_width}.2f}",)
+    print(f"Price #2: ${second_number:>{max_width}.2f}")
+    print(f"Price #3: ${third_number:>{max_width}.2f}")
+# align_text()
+
+    
